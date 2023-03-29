@@ -148,6 +148,8 @@ function verificationPasword2($pasword){
     }
 }
 
+// exercice 19
 
+// exercice 20
 
 ?>
