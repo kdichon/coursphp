@@ -78,22 +78,22 @@ function plusPetit($item1, $item2){
 }
 
 // exercice 12
-function plusPetit12($item1, $item2){
-    if ($item1 < $item2) {
-        $petit = $item1;
+function plusPetit12($item1, $item2, $item3){
+    if ($item2 > $item1 && $item1 < $item3) {
+        $petit3 = $item1;
+    } elseif ($item1 > $item2 && $item2 < $item3) {
+        $petit3 = $item2;
     } else {
-        $petit = $item2;
+        $petit3 = $item3;
     }
-    var_dump($petit);
-    return $petit;
+    var_dump($petit3);
+    return $petit3;
 }
 
 // exercice 13
 function premierElementTableau($tableau){
     if (isset($tableau[0])) {
         return $tableau[0];
-    } else {
-        return null;
     }
 }
 
@@ -103,5 +103,51 @@ function dernierElementTableau($tableau){
         return $tableau[count($tableau)-1];
     }
 }
+
+// exercice 15
+function plusGrandTab($grandTableau){
+    if (isset($grandTableau)) {
+        $memoG = 0;
+        for ($i = 0; $i < count($grandTableau) ; $i++) {
+            if ($grandTableau[$i] > $memoG) {
+                $memoG = $grandTableau[$i];
+            }
+        }
+        return $memoG;
+    } 
+}
+
+// exercice 16
+function plusPetitTab($petitTableau){
+    if (isset($petitTableau)) {
+        $memoP = $petitTableau[0];
+        for ($i = 0; $i < count($petitTableau) ; $i++) {
+            if ($petitTableau[$i] < $memoP) {
+                $memoP = $petitTableau[$i];
+            }
+        }
+        return $memoP;
+    } 
+}
+
+// exercice 17
+function verificationPasword($pasword){
+    if (strlen($pasword) < 8) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+// exercice 18
+function verificationPasword2($pasword){
+    if (strlen($pasword) < 8) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
 
 ?>
